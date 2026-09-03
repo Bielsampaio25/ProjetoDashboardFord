@@ -1,1 +1,49 @@
-<p>menu works!</p>
+<div class="menuContainer">
+
+    <div class="headMenu">
+
+        <label for="check" class="menuButton">
+
+            <input
+                id="check"
+                type="checkbox"
+                (change)="menuAberto = !menuAberto"
+            >
+
+            <span class="top"></span>
+            <span class="mid"></span>
+            <span class="bot"></span>
+
+        </label>
+
+        <img src="img/ford.png" alt="Ford">
+
+    </div>
+
+
+    <aside class="menu" [class.ativo]="menuAberto">
+
+        <div class="bodyMenu">
+
+            <a routerLink="/home">
+                Home
+            </a>
+
+            <a routerLink="/dashboard">
+                Dashboard
+            </a>
+
+        </div>
+
+
+        <div class="footerMenu">
+
+            <a href="#">
+                Sair
+            </a>
+
+        </div>
+
+    </aside>
+
+</div>

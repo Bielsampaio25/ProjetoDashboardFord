@@ -1,0 +1,130 @@
+.menuContainer {
+    position: relative;
+}
+
+.headMenu {
+    position: relative;
+    z-index: 1100;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.headMenu img {
+    width: 70px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.menuButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 10%;
+
+    width: 2.8em;
+    height: 2.8em;
+
+    border-radius: 0.5em;
+
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+
+    cursor: pointer;
+
+    box-shadow:
+        4px 4px 8px #c5c5c5,
+        -4px -4px 8px #ffffff;
+}
+
+.menuButton input {
+    display: none;
+}
+
+.menuButton span {
+    width: 22px;
+    height: 3px;
+
+    background: #131313;
+
+    border-radius: 100px;
+
+    transition: 0.3s ease;
+}
+
+.menuButton input:checked ~ .top {
+    transform: translateY(250%) rotate(45deg);
+    width: 28px;
+}
+
+.menuButton input:checked ~ .mid {
+    transform: translateX(-15px);
+    opacity: 0;
+}
+
+.menuButton input:checked ~ .bot {
+    transform: translateY(-250%) rotate(-45deg);
+    width: 28px;
+}
+
+.menu {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 250px;
+    height: 100vh;
+
+    padding: 100px 20px 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background: #ffffff;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+
+    z-index: 1000;
+
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.08);
+}
+
+.menu.ativo {
+    transform: translateX(0);
+}
+
+.bodyMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.bodyMenu a,
+.footerMenu a {
+    display: block;
+
+    padding: 12px 15px;
+
+    color: #131313;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    transition: 0.2s;
+}
+
+.bodyMenu a:hover,
+.footerMenu a:hover {
+    background: #e8e8e8;
+}

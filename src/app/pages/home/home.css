@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+body {
+    background: #f5f6f7;
+    color: #131313;
+}
+
+.nav-container {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+
+    padding: 20px;
+
+    background: white;
+}
+
+.headMenu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    position: relative;
+    z-index: 1100;
+}
+
+.headMenu img {
+    width: 70px;
+    height: 30px;
+    object-fit: contain;
+}
+
+
+
+
+
+
+/* =========================
+   TÍTULO DA PÁGINA
+========================= */
+
+.nav-titulo {
+    display: flex;
+    flex-direction: column;
+
+    margin-right: auto;
+    margin-left: 30px;
+}
+
+.nav-titulo span {
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    color: #8b98a2;
+}
+
+.nav-titulo h1 {
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: 35px;
+    font-weight: 600;
+
+    line-height: 1;
+}
+
+
+/* =========================
+   USUÁRIO
+========================= */
+
+.nav-usuario {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    font-family: "DM Sans", sans-serif;
+}
+
+#cargo {
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #495057;
+}
+
+#perfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: #131313;
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+main {
+    width: 100%;
+    min-height: calc(100vh - 80px);
+
+    padding: 30px;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 768px) {
+
+    .nav-container {
+        height: 70px;
+        padding: 15px;
+    }
+
+    .headMenu img {
+        width: 60px;
+        height: 26px;
+    }
+
+    .nav-titulo {
+        margin-left: 15px;
+    }
+
+    .nav-titulo span {
+        font-size: 12px;
+    }
+
+    .nav-titulo h1 {
+        font-size: 28px;
+    }
+
+    #cargo {
+        display: none;
+    }
+
+    #perfil {
+        width: 36px;
+        height: 36px;
+    }
+
+    .menu {
+        width: 230px;
+        padding-top: 90px;
+    }
+
+    main {
+        padding: 20px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .nav-titulo {
+        margin-left: 10px;
+    }
+
+    .nav-titulo h1 {
+        font-size: 24px;
+    }
+
+    .headMenu {
+        gap: 10px;
+    }
+
+    .menu {
+        width: 80%;
+    }
+}

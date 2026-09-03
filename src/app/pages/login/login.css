@@ -24,7 +24,7 @@
 .login-imagem-titulo{
     z-index: 2;
     position: absolute;
-    top: 50rem;
+    top: 5rem;
     left: 5rem;
     color: white;
     font-weight: 700;
@@ -33,7 +33,7 @@
 }
 
 .span-titulo{
-    color: #9DC8F0;
+    color: #0b447c;
 }
 
 .login-container {
@@ -82,12 +82,16 @@
     border-radius: 2px;
     outline: none;
     box-shadow: 1px 4px 23px 5px rgba(0, 0, 0, 0.23);
-    align-items: center;
+    padding-left: 10px;
 }
 
 .login-form input:hover{
     border: 2px solid #205c94;
     transition: 0.1s;
+}
+
+.login-form input:focus{
+    border: 2px solid #205c94;
 }
 
 .login-form label{
