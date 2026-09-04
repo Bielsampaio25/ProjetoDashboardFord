@@ -1,127 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
-body {
-    background: #f5f6f7;
-    color: #131313;
-}
-
-.nav-container {
-    position: relative;
-
-    display: flex;
-    align-items: center;
+.card-boasVindas-content {
     width: 100%;
-    height: 80px;
-
-    padding: 20px;
-
-    background: white;
+    height: 100vh;
 }
 
-.headMenu {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-
+.card-boasVindas-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
     position: relative;
-    z-index: 1100;
+    z-index: 1;
 }
 
-.headMenu img {
-    width: 70px;
-    height: 30px;
-    object-fit: contain;
-}
-
-
-
-
-
-
-/* =========================
-   TÍTULO DA PÁGINA
-========================= */
-
-.nav-titulo {
+.card-boasVindas-texto{
+    position: absolute;
+    z-index: 2;
+    top: 25rem;
+    left: 5rem;
     display: flex;
     flex-direction: column;
-
-    margin-right: auto;
-    margin-left: 30px;
+    gap: 20px;
 }
 
-.nav-titulo span {
-    font-family: "DM Sans", sans-serif;
-
-    font-size: 15px;
-    font-weight: 700;
-
-    color: #8b98a2;
-}
-
-.nav-titulo h1 {
+.card-boasVindas-texto h1{
     font-family: "Barlow Condensed", sans-serif;
-
-    font-size: 35px;
     font-weight: 600;
-
-    line-height: 1;
+    font-size: 95px;
+    color: white;
 }
 
-
-/* =========================
-   USUÁRIO
-========================= */
-
-.nav-usuario {
-    display: flex;
-    align-items: center;
-
-    gap: 12px;
-
+.card-boasVindas-texto p{
     font-family: "DM Sans", sans-serif;
-}
-
-#cargo {
-    font-size: 14px;
     font-weight: 600;
-
-    color: #495057;
-}
-
-#perfil {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 40px;
-    height: 40px;
-
-    border-radius: 50%;
-
-    background: #131313;
+    font-size: 20px;
     color: #ffffff;
-
-    font-size: 13px;
-    font-weight: 700;
 }
 
-
-/* =========================
-   CONTEÚDO
-========================= */
-
-main {
-    width: 100%;
-    min-height: calc(100vh - 80px);
-
-    padding: 30px;
+.card-boasVindas-texto button{
+    width: 192.06px;
+    height: 46px;
+    color: #063b7a;
+    background-color: white;
+    border: none;
+    transition: transform 0.3s ease;
 }
 
-
-/* =========================
-   RESPONSIVIDADE
-========================= */
+.card-boasVindas-texto button:hover{
+    transform: scale(1.03);
+    background-color: #e0eaf7;
+}
 
 @media (max-width: 768px) {
 
