@@ -12,15 +12,21 @@
     </header>
     <main>
         <section class="section-introducao">
+            <div>
             <h3>Dashboard Ford</h3>
             <h1>Bom dia, <span>Administrador.</span></h1>
+            </div>
         </section>
         <section class="section-consulta">
+            <div class="section-consulta-content">
             <div class="icone">
                     <i class="material-icons">search</i>
             </div>
+            <div class="section-consulta-texto">
                 <h3>Consultar Veiculo</h3>
                 <p>Selecione um modelo para atualizar os indicadores</p>
+            </div>
+            </div>
             <div>
                 <select name="selectConsulta" id="selectConsulta">
                     <option value="ranger">Ranger</option>
@@ -30,9 +36,66 @@
                 </select>
             </div>
         </section>
-        <section></section>
-        <section></section>
-        <section></section>
+        <section class="section-dados">
+            <article class="section-dados-card">
+                <h1>1500</h1>
+                <h3>Total De Vendas</h3>
+                <p>Unid.</p>
+            </article>
+            <article class="section-dados-card">
+                <h1>500</h1>
+                <h3>Conectados</h3>
+                <p>Unid.</p>
+            </article>
+            <article class="section-dados-card">
+                <h1>750</h1>
+                <h3>Update Software</h3>
+                <p>Unid.</p>
+            </article>
+        </section>
+        <section class="section-veiculo">
+            <div class="section-veiculo-texto">
+                <h3>Veiculo Selecionado</h3>
+                <h1>Ranger</h1>
+            </div>
+            <div class="section-veiculo-imagem">
+                <img src="img/ranger.png" alt="Imagem do  carro ford ranger">
+            </div>
+        </section>
+        <section class="section-tabela">
+            <div class="section-tabela-head">
+                <div class="section-tabela-head-texto">
+                    <h3>Dados Do Veiculo</h3>
+                    <h1>Consulta Por Código</h1>
+                </div>
+                <div class="section-tabela-head-pesquisa">
+                    <input type="text" name="codigo" id="codigo" placeholder="Digite o código do veiculo">
+                    <button><i class="material-icons">search</i></button>
+                </div>
+            </div>
+            <div class="tabela-container">
+            <table>
+                <thead>
+                    <th>Codigo - Vin</th>
+                    <th>Odômetro</th>
+                    <th>Nível De Combustivel</th>
+                    <th>Status</th>
+                    <th>Lat.</th>
+                    <th>Long.</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2FRHDUYS2Y63NHD22454</td>
+                        <td>50000 km</td>
+                        <td>90%</td>
+                        <td>on</td>
+                        <td>-12,2322</td>
+                        <td>-35,2314</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </section>
     </main>
 </body>
 </html>
