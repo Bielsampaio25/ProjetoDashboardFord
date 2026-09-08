@@ -77,6 +77,7 @@
     left: 0;
 
     width: 250px;
+    max-width: 85vw;
     height: 100vh;
 
     padding: 100px 20px 25px;
@@ -93,6 +94,8 @@
     z-index: 1000;
 
     box-shadow: 4px 0 15px rgba(0, 0, 0, 0.08);
+
+    overflow-y: auto;
 }
 
 .menu.ativo {
@@ -127,4 +130,97 @@
 .bodyMenu a:hover,
 .footerMenu a:hover {
     background: #e8e8e8;
+}
+
+@media (max-width: 768px) {
+
+    .headMenu {
+        gap: 10px;
+    }
+
+    .headMenu img {
+        width: 65px;
+        height: 28px;
+    }
+
+    .menuButton {
+        width: 2.6em;
+        height: 2.6em;
+    }
+
+    .menuButton span {
+        width: 20px;
+        height: 3px;
+    }
+
+    .menuButton input:checked ~ .top {
+        width: 25px;
+    }
+
+    .menuButton input:checked ~ .bot {
+        width: 25px;
+    }
+
+    .menu {
+        width: 240px;
+        max-width: 80vw;
+        padding: 90px 18px 20px;
+    }
+
+    .bodyMenu a,
+    .footerMenu a {
+        padding: 11px 13px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .headMenu {
+        gap: 8px;
+    }
+
+    .headMenu img {
+        width: 60px;
+        height: 26px;
+    }
+
+    .menuButton {
+        width: 2.5em;
+        height: 2.5em;
+        border-radius: 0.45em;
+    }
+
+    .menuButton span {
+        width: 19px;
+        height: 3px;
+    }
+
+    .menuButton input:checked ~ .top {
+        width: 24px;
+    }
+
+    .menuButton input:checked ~ .mid {
+        transform: translateX(-12px);
+    }
+
+    .menuButton input:checked ~ .bot {
+        width: 24px;
+    }
+
+    .menu {
+        width: 230px;
+        max-width: 82vw;
+        padding: 85px 15px 18px;
+    }
+
+    .bodyMenu {
+        gap: 5px;
+    }
+
+    .bodyMenu a,
+    .footerMenu a {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
 }

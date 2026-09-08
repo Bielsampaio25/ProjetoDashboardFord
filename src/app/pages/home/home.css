@@ -3,6 +3,8 @@
 .card-boasVindas-content {
     width: 100%;
     height: 100vh;
+    position: relative;
+    overflow: hidden;
 }
 
 .card-boasVindas-content img {
@@ -15,104 +17,133 @@
     z-index: 1;
 }
 
-.card-boasVindas-texto{
+.card-boasVindas-texto {
     position: absolute;
     z-index: 2;
-    top: 25rem;
+    top: 50%;
     left: 5rem;
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 20px;
+    max-width: 700px;
 }
 
-.card-boasVindas-texto h1{
+.card-boasVindas-texto h1 {
     font-family: "Barlow Condensed", sans-serif;
     font-weight: 600;
     font-size: 95px;
+    line-height: 0.95;
     color: white;
+    margin: 0;
 }
 
-.card-boasVindas-texto p{
+.card-boasVindas-texto p {
     font-family: "DM Sans", sans-serif;
     font-weight: 600;
     font-size: 20px;
+    line-height: 1.4;
     color: #ffffff;
+    margin: 0;
 }
 
-.card-boasVindas-texto button{
+.card-boasVindas-texto button {
     width: 192.06px;
     height: 46px;
     color: #063b7a;
     background-color: white;
     border: none;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
     cursor: pointer;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
 }
 
-.card-boasVindas-texto button:hover{
+.card-boasVindas-texto button:hover {
     transform: scale(1.03);
     background-color: #e0eaf7;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
 
-    .nav-container {
-        height: 70px;
-        padding: 15px;
+    .card-boasVindas-texto {
+        left: 4rem;
+        max-width: 600px;
     }
 
-    .headMenu img {
-        width: 60px;
-        height: 26px;
+    .card-boasVindas-texto h1 {
+        font-size: 80px;
     }
 
-    .nav-titulo {
-        margin-left: 15px;
-    }
-
-    .nav-titulo span {
-        font-size: 12px;
-    }
-
-    .nav-titulo h1 {
-        font-size: 28px;
-    }
-
-    #cargo {
-        display: none;
-    }
-
-    #perfil {
-        width: 36px;
-        height: 36px;
-    }
-
-    .menu {
-        width: 230px;
-        padding-top: 90px;
-    }
-
-    main {
-        padding: 20px;
+    .card-boasVindas-texto p {
+        font-size: 18px;
     }
 }
 
+@media (max-width: 768px) {
+
+    .card-boasVindas-content {
+        height: 100svh;
+    }
+
+    .card-boasVindas-content img {
+        object-position: center;
+    }
+
+    .card-boasVindas-texto {
+        top: 50%;
+        left: 30px;
+        right: 30px;
+        transform: translateY(-50%);
+        max-width: none;
+        gap: 18px;
+    }
+
+    .card-boasVindas-texto h1 {
+        font-size: 64px;
+    }
+
+    .card-boasVindas-texto p {
+        font-size: 17px;
+        max-width: 500px;
+    }
+
+    .card-boasVindas-texto button {
+        width: 180px;
+        height: 44px;
+    }
+}
 
 @media (max-width: 480px) {
 
-    .nav-titulo {
-        margin-left: 10px;
+    .card-boasVindas-content {
+        height: 100svh;
     }
 
-    .nav-titulo h1 {
-        font-size: 24px;
+    .card-boasVindas-content img {
+        object-position: center;
     }
 
-    .headMenu {
-        gap: 10px;
+    .card-boasVindas-texto {
+        left: 20px;
+        right: 20px;
+        gap: 15px;
     }
 
-    .menu {
-        width: 80%;
+    .card-boasVindas-texto h1 {
+        font-size: 50px;
+        line-height: 0.95;
+    }
+
+    .card-boasVindas-texto p {
+        font-size: 15px;
+        line-height: 1.35;
+    }
+
+    .card-boasVindas-texto button {
+        width: 170px;
+        height: 42px;
+        font-size: 13px;
     }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Menu } from '../menu/menu';
 
 @Component({
@@ -8,5 +8,5 @@ import { Menu } from '../menu/menu';
   styleUrl: './header.css',
 })
 export class Header {
-
+  @Input() nomePagina: string = '';
 }

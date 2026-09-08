@@ -8,13 +8,13 @@
 </head>
 <body>
     <header>
-        <app-header></app-header>
+        <app-header nomePagina="Dashboard"></app-header>
     </header>
     <main>
         <section class="section-introducao">
             <div>
             <h3>Dashboard Ford</h3>
-            <h1>Bom dia, <span>Administrador.</span></h1>
+            <h1>Olá, <span>Administrador.</span></h1>
             </div>
         </section>
         <section class="section-consulta">
@@ -38,17 +38,17 @@
         </section>
         <section class="section-dados">
             <article class="section-dados-card">
-                <h1>1500</h1>
+                <h1 id="totalVendas">1500</h1>
                 <h3>Total De Vendas</h3>
                 <p>Unid.</p>
             </article>
             <article class="section-dados-card">
-                <h1>500</h1>
+                <h1 id="veiculosConectados">500</h1>
                 <h3>Conectados</h3>
                 <p>Unid.</p>
             </article>
             <article class="section-dados-card">
-                <h1>750</h1>
+                <h1 id="updateSoftware">750</h1>
                 <h3>Update Software</h3>
                 <p>Unid.</p>
             </article>
@@ -56,10 +56,10 @@
         <section class="section-veiculo">
             <div class="section-veiculo-texto">
                 <h3>Veiculo Selecionado</h3>
-                <h1>Ranger</h1>
+                <h1 id="nomeVeiculo">Ranger</h1>
             </div>
             <div class="section-veiculo-imagem">
-                <img src="img/ranger.png" alt="Imagem do  carro ford ranger">
+                <img src="img/ranger.png" alt="Imagem do  carro ford ranger" id="veiculoImagem">
             </div>
         </section>
         <section class="section-tabela">
@@ -69,7 +69,7 @@
                     <h1>Consulta Por Código</h1>
                 </div>
                 <div class="section-tabela-head-pesquisa">
-                    <input type="text" name="codigo" id="codigo" placeholder="Digite o código do veiculo">
+                    <input type="text" name="codigo" id="codigoVin" placeholder="Digite o código do veiculo">
                     <button><i class="material-icons">search</i></button>
                 </div>
             </div>
@@ -85,12 +85,12 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>2FRHDUYS2Y63NHD22454</td>
-                        <td>50000 km</td>
-                        <td>90%</td>
-                        <td>on</td>
-                        <td>-12,2322</td>
-                        <td>-35,2314</td>
+                        <td id="codigoVin">2FRHDUYS2Y63NHD22454</td>
+                        <td id="odometro">50000 km</td>
+                        <td id="nivelCombustivel">90%</td>
+                        <td id="status">on</td>
+                        <td id="latitude">-12,2322</td>
+                        <td id="longitude">-35,2314</td>
                     </tr>
                 </tbody>
             </table>
