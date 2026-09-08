@@ -46,6 +46,7 @@
     background-color: white;
     border: none;
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .card-boasVindas-texto button:hover{

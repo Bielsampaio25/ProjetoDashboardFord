@@ -89,3 +89,62 @@
     font-size: 13px;
     font-weight: 700;
 }
+
+@media (max-width: 768px) {
+
+    .nav-container {
+        height: 70px;
+        padding: 15px;
+    }
+
+    .headMenu img {
+        width: 60px;
+        height: 26px;
+    }
+
+    .nav-titulo {
+        margin-left: 15px;
+    }
+
+    .nav-titulo span {
+        font-size: 12px;
+    }
+
+    .nav-titulo h1 {
+        font-size: 28px;
+    }
+
+    #cargo {
+        display: none;
+    }
+
+    #perfil {
+        width: 36px;
+        height: 36px;
+    }
+
+    .menu {
+        width: 230px;
+        padding-top: 90px;
+    }
+
+    main {
+        padding: 20px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .nav-titulo {
+        margin-left: 10px;
+    }
+
+    .nav-titulo h1 {
+        font-size: 24px;
+    }
+
+    .headMenu {
+        gap: 10px;
+    }
+}
