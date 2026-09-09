@@ -17,14 +17,14 @@
                 <h1>Entrar No Painel</h1>
                 <p>Use as suas credenciais de gestão para continuar.</p>
                 </div>
-                <form action="/login" method="POST" class="login-form">
+                <form class="login-form" (ngSubmit)="login()">
                     <div class="login-form-campo">
                         <label>Usuario</label>
-                        <input type="text" placeholder="Digite seu usuario" id="usuario">
+                        <input type="text" placeholder="Digite seu usuario" id="usuario" [(ngModel)]="nome">
                     </div>
                     <div class="login-form-campo">
                         <label>Senha</label>
-                        <input type="password" placeholder="Digite sua senha" id="senha">
+                        <input type="password" placeholder="Digite sua senha" id="senha" [(ngModel)]="senha">
                     </div>
                     <button class="login-form-botao">Entrar</button>
                 </form>
