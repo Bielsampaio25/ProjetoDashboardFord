@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { LoginAuth } from '../../services/login-auth';
 
 @Component({
   selector: 'app-menu',
@@ -10,5 +11,11 @@ import { RouterLink } from '@angular/router';
 export class Menu {
 
   menuAberto = false;
+
+  constructor(private authService : LoginAuth){}
+
+  logout(): void{
+    this.authService.logout();
+  }
 
 }

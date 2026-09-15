@@ -28,14 +28,14 @@ export class Login {
     console.log('Senha:', this.senha);
 
     this.loginAuth.login({
-      nome: this.nome,
+      nome: this.nome, //variavel recebe o atributo
       senha: this.senha
-    }).subscribe({
+    }).subscribe({ //espera o resultado da API (tipo um Await em JS)
 
-      next: (usuario) => {
+      next: (usuario) => { //se o resultado retornou sucesso
         console.log('Login realizado:', usuario);
 
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/dashboard']); //redireciona para dashboard
       },
 
       error: (erro) => {
