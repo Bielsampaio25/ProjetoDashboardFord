@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Menu } from '../../componentes/menu/menu';
 import { Header } from '../../componentes/header/header';
-import { Veiculo } from '../../models/veiculo.model';
+import { DadosVeiculo, Veiculo } from '../../models/veiculo.model';
 import { Vehicle } from '../../services/vehicle';
-import { CommonModule} from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -12,13 +12,21 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
-export class Dashboard {
-  
-  veiculos : Veiculo [] = [];
+export class Dashboard implements OnInit {
 
-  constructor(private vehicle : Vehicle){}
+  veiculos: Veiculo[] = [];
 
-  ngOnInit(): void{
+  veiculoSelecionado: Veiculo | null = null;
+
+  dadosVeiculo: DadosVeiculo | null = null;
+
+  codigoVin: string = '';
+
+  mensagemErro: string = '';
+
+  constructor(private vehicle: Vehicle) {}
+
+  ngOnInit(): void {
     this.vehicle.getVeiculos().subscribe(
       response => {
         this.veiculos = response.vehicles;
@@ -26,15 +34,41 @@ export class Dashboard {
     );
   }
 
-  veiculoSelecionado : Veiculo | null = null;
+  veiculoEscolhido(e: Event): void {
+    const idSelecionado = (e.target as HTMLSelectElement).value;
 
-  veiculoEscolhido(e : Event) : void{
-      const idSelecionado = (e.target as HTMLSelectElement).value;
+    if (idSelecionado) {
+      this.veiculoSelecionado =
+        this.veiculos.find(v => v.id == Number(idSelecionado)) || null;
+    } else {
+      this.veiculoSelecionado = null;
+    }
+  }
 
-      if(idSelecionado){
-        this.veiculoSelecionado = this.veiculos.find(v => v.id == Number(idSelecionado))|| null;
-      }else{
-        this.veiculoSelecionado = null;
+  pesquisarVin(): void {
+
+    if (!this.codigoVin.trim()) {
+      return;
+    }
+
+    this.mensagemErro = '';
+
+    this.vehicle.getDadosVeiculo(this.codigoVin).subscribe({
+
+      next: response => {
+        this.dadosVeiculo = response;
+      },
+
+      error: error => {
+        this.dadosVeiculo = null;
+
+        if (error.status === 400) {
+          this.mensagemErro = 'Código VIN não encontrado.';
+        } else {
+          this.mensagemErro = 'Erro ao consultar o veículo.';
+        }
       }
+
+    });
   }
 }

@@ -12,3 +12,12 @@ export interface Veiculo{
 export interface VeiculosAPI {
   vehicles: Veiculos;
 }
+
+export interface DadosVeiculo {
+  id: number
+  odometro: number
+  nivelCombustivel: number
+  status: string
+  lat: number
+  long: number
+}

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>Document</title>
 </head>
+
 <body>
     <header>
         <app-header nomePagina="Dashboard"></app-header>
@@ -13,19 +15,19 @@
     <main>
         <section class="section-introducao">
             <div>
-            <h3>Dashboard Ford</h3>
-            <h1>Olá, <span>Administrador.</span></h1>
+                <h3>Dashboard Ford</h3>
+                <h1>Olá, <span>Administrador.</span></h1>
             </div>
         </section>
         <section class="section-consulta">
             <div class="section-consulta-content">
-            <div class="icone">
+                <div class="icone">
                     <i class="material-icons">search</i>
-            </div>
-            <div class="section-consulta-texto">
-                <h3>Consultar Veiculo</h3>
-                <p>Selecione um modelo para atualizar os indicadores</p>
-            </div>
+                </div>
+                <div class="section-consulta-texto">
+                    <h3>Consultar Veiculo</h3>
+                    <p>Selecione um modelo para atualizar os indicadores</p>
+                </div>
             </div>
             <div>
                 <select name="selectConsulta" id="selectConsulta" (change)="veiculoEscolhido($event)">
@@ -33,7 +35,7 @@
                     <option value="" *ngFor="let v of veiculos" [value]="v.id">
                         {{v.vehicle}}
                     </option>
-                    
+
                 </select>
             </div>
         </section>
@@ -60,7 +62,8 @@
                 <h1 id="nomeVeiculo">{{veiculoSelecionado?.vehicle}}</h1>
             </div>
             <div class="section-veiculo-imagem">
-                <img *ngIf="veiculoSelecionado" [src]="veiculoSelecionado.img" [alt]="veiculoSelecionado.vehicle" id="veiculoImagem">
+                <img *ngIf="veiculoSelecionado" [src]="veiculoSelecionado.img" [alt]="veiculoSelecionado.vehicle"
+                    id="veiculoImagem">
             </div>
         </section>
         <section class="section-tabela">
@@ -70,33 +73,46 @@
                     <h1>Consulta Por Código</h1>
                 </div>
                 <div class="section-tabela-head-pesquisa">
-                    <input type="text" name="codigo" id="codigoVin" placeholder="Digite o código do veiculo">
-                    <button><i class="material-icons">search</i></button>
+                    <input type="text" name="codigo" id="codigoVin" placeholder="Digite o código do veículo"
+                        [(ngModel)]="codigoVin" (keyup.enter)="pesquisarVin()">
+
+                    <button type="button" (click)="pesquisarVin()">
+                        <i class="material-icons">search</i>
+                    </button>
                 </div>
             </div>
             <div class="tabela-container">
-            <table>
-                <thead>
-                    <th>Codigo - Vin</th>
-                    <th>Odômetro</th>
-                    <th>Nível De Combustivel</th>
-                    <th>Status</th>
-                    <th>Lat.</th>
-                    <th>Long.</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td id="codigoVin">2FRHDUYS2Y63NHD22454</td>
-                        <td id="odometro">50000 km</td>
-                        <td id="nivelCombustivel">90%</td>
-                        <td id="status">on</td>
-                        <td id="latitude">-12,2322</td>
-                        <td id="longitude">-35,2314</td>
-                    </tr>
-                </tbody>
-            </table>
+                <table>
+                    <thead>
+                        <th>Codigo - Vin</th>
+                        <th>Odômetro</th>
+                        <th>Nível De Combustivel</th>
+                        <th>Status</th>
+                        <th>Lat.</th>
+                        <th>Long.</th>
+                    </thead>
+                    <tbody>
+                        @if (dadosVeiculo) {
+                        <tr>
+                            <td>{{ codigoVin }}</td>
+                            <td>{{ dadosVeiculo.odometro }} km</td>
+                            <td>{{ dadosVeiculo.nivelCombustivel }}%</td>
+                            <td>{{ dadosVeiculo.status }}</td>
+                            <td>{{ dadosVeiculo.lat }}</td>
+                            <td>{{ dadosVeiculo.long }}</td>
+                        </tr>
+                        } @else {
+                        <tr>
+                            <td colspan="6">
+                                Digite um código VIN para consultar
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
             </div>
         </section>
     </main>
 </body>
+
 </html>
