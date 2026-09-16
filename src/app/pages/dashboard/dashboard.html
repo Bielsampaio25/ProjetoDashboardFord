@@ -28,27 +28,28 @@
             </div>
             </div>
             <div>
-                <select name="selectConsulta" id="selectConsulta">
-                    <option value="ranger">Ranger</option>
-                    <option value="mustang">Mustang</option>
-                    <option value="territory">Territory</option>
-                    <option value="bronco sport">Bronco Sport</option>
+                <select name="selectConsulta" id="selectConsulta" (change)="veiculoEscolhido($event)">
+                    <option value="" selected disabled hidden>Selecione Uma Opção</option>
+                    <option value="" *ngFor="let v of veiculos" [value]="v.id">
+                        {{v.vehicle}}
+                    </option>
+                    
                 </select>
             </div>
         </section>
         <section class="section-dados">
             <article class="section-dados-card">
-                <h1 id="totalVendas">1500</h1>
+                <h1 id="totalVendas">{{veiculoSelecionado?.volumetotal || 0}}</h1>
                 <h3>Total De Vendas</h3>
                 <p>Unid.</p>
             </article>
             <article class="section-dados-card">
-                <h1 id="veiculosConectados">500</h1>
+                <h1 id="veiculosConectados">{{veiculoSelecionado?.connected}}</h1>
                 <h3>Conectados</h3>
                 <p>Unid.</p>
             </article>
             <article class="section-dados-card">
-                <h1 id="updateSoftware">750</h1>
+                <h1 id="updateSoftware">{{veiculoSelecionado?.softwareUpdates}}</h1>
                 <h3>Update Software</h3>
                 <p>Unid.</p>
             </article>
@@ -56,10 +57,10 @@
         <section class="section-veiculo">
             <div class="section-veiculo-texto">
                 <h3>Veiculo Selecionado</h3>
-                <h1 id="nomeVeiculo">Ranger</h1>
+                <h1 id="nomeVeiculo">{{veiculoSelecionado?.vehicle}}</h1>
             </div>
             <div class="section-veiculo-imagem">
-                <img src="img/ranger.png" alt="Imagem do  carro ford ranger" id="veiculoImagem">
+                <img *ngIf="veiculoSelecionado" [src]="veiculoSelecionado.img" [alt]="veiculoSelecionado.vehicle" id="veiculoImagem">
             </div>
         </section>
         <section class="section-tabela">
